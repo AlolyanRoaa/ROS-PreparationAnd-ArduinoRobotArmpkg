@@ -113,8 +113,8 @@ install ros_lib library
     $ rosrun rosserial_arduino make_libraries.py . 
 ```
 ## 4-simulation & Controlling the motors `joint_state_publisher`
-TO run robot_arm_pkg with RViz use 
-![robot_arm_pkg with RViz](4-simulation & Controlling the motors joint_state_publisher/1- controlling the motors with RViz.PNG)
+To run robot_arm_pkg with RViz use 
+![robot_arm_pkg with RViz](https://github.com/AlolyanRoaa/ROS-PreparingWith-ArduinoRobotArmpkg/blob/main/4-simulation%20%26%20Controlling%20the%20motors%20joint_state_publisher/1-%20controlling%20the%20motors%20with%20RViz.PNG)
 ```bash
 	$ roslaunch robot_arm_pkg check_motors.launch
 ```
