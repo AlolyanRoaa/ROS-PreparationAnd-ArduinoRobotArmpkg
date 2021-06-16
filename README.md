@@ -1,4 +1,5 @@
 
+
 # ROS Preparing With arduino_robot_arm package
 
 documentation of preparing ROS with arduino_robot_arm package
@@ -15,9 +16,11 @@ documentation of preparing ROS with arduino_robot_arm package
   
 ## 1-Installing & Preparing ROS melodic
 
-Using Ubuntu 18.04 OS run these commands in the terminal:
+Using Ubuntu 18.04 OS run these commands in the terminal: 
 
 
+
+#### Installing:
 
 To setup the machine to accept packages.ros.org
 ```bash
@@ -44,6 +47,70 @@ and for initialize rosdep to use ROS tools
    sudo apt install python-rosdep
    sudo rosdep init
    rosdep update
+```
+
+
+#### Preparing:
+
+To start using ROS properly we have to create a workspace for catkin.
+
+Start by Installing the prebuilt Package catkin and resolve the dependencies on Ubuntu.
+
+```bash
+sudo apt-get install ros-melodic-catkin
+sudo apt-get install cmake python-catkin-pkg python-empy python-nose python-setuptools libgtest-dev build-essential
+```
+sourced your environment the create and build a catkin workspace
+```bash
+$ source /opt/ros/melodic/setup.bash
+
+$ mkdir -p ~/catkin_ws/src
+$ cd ~/catkin_ws/
+$ catkin_make
+```
+To make sure that the workspace is properly working with bashrc
+```bash
+    $ echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+```
+
+
+## 2-Installing the package **arduino_robot_arm**
+ Add the **arduino_robot_arm** package to “src” folder in the catkin workspace
+ ```bash
+    $ cd ~/catkin_ws/src
+	$ sudo apt install git
+	$ git clone https://github.com/smart-methods/arduino_robot_arm 
+```
+Install all the dependencies of the package
+```bash
+    $ cd ~/catkin_ws
+	$ rosdep install --from-paths src --ignore-src -r -y
+	$ sudo apt-get install ros-melodic-moveit
+	$ sudo apt-get install ros-melodic-joint-state-publisher ros-melodic-joint-state-publisher-gui
+	$ sudo apt-get install ros-melodic-gazebo-ros-control joint-state-publisher
+	$ sudo apt-get install ros-melodic-ros-controllers ros-melodic-ros-control
+```
+To compile the package
+```bash
+    $ catkin_make
+```
+
+
+## 3-Using Arduino with ROS
+*Note: for not having a physical arduino all parts that have to initialize the USP port has not been done*
+
+Start by downloading Arduino IDE 1.8.15 from: <https://www.arduino.cc/en/software>.
+
+install rosserial for Arduino
+```bash
+    $ sudo apt-get install ros-kinetic-rosserial-arduino
+    $ sudo apt-get install ros-kinetic-rosserial
+```
+install ros_lib library
+```bash
+    $ cd <sketchbook>/libraries
+    $ rm -rf ros_lib
+    $ rosrun rosserial_arduino make_libraries.py . 
 ```
 
 
