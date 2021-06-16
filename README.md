@@ -114,7 +114,7 @@ install ros_lib library
 ```
 ## 4-simulation & Controlling the motors `joint_state_publisher`
 TO run robot_arm_pkg with RViz use 
-(((HERE IMAGE)))
+![robot_arm_pkg with RViz](4-simulation & Controlling the motors joint_state_publisher/1- controlling the motors with RViz.PNG)
 ```bash
 	$ roslaunch robot_arm_pkg check_motors.launch
 ```
