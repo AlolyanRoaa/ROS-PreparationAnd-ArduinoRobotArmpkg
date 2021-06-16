@@ -114,17 +114,27 @@ install ros_lib library
 ```
 ## 4-simulation & Controlling the motors `joint_state_publisher`
 To run robot_arm_pkg with RViz use 
+
+
 ![robot_arm_pkg with RViz](https://github.com/AlolyanRoaa/ROS-PreparingWith-ArduinoRobotArmpkg/blob/main/4-simulation%20%26%20Controlling%20the%20motors%20joint_state_publisher/1-%20controlling%20the%20motors%20with%20RViz.PNG)
 ```bash
 	$ roslaunch robot_arm_pkg check_motors.launch
 ```
 and to run robot_arm_pkg with Gazebo use 
-(((HERE IMAGE)))
+
+
+![robot_arm_pkg with gazebo](https://github.com/AlolyanRoaa/ROS-PreparingWith-ArduinoRobotArmpkg/blob/main/4-simulation%20%26%20Controlling%20the%20motors%20joint_state_publisher/2-run%20on%20the%20gazebo.PNG)
 ```bash
 	$ roslaunch robot_arm_pkg check_motors_gazebo.launch
 ```
 now to interact with each joint of the robot while RViz and Gazebo is running in the background
-((((Video))))
+
+
+https://user-images.githubusercontent.com/85321139/122163031-375ce200-ce7d-11eb-8e5b-4505823455c9.mp4
+
+
+
+
 ```bash
 	$ rosrun robot_arm_pkg joint_states_to_gazebo.py
 ```
@@ -135,7 +145,10 @@ now to interact with each joint of the robot while RViz and Gazebo is running in
 ```
 
 to visualize the ROS graph of application components use `rqt_graph` command
-((((IMAGE HERE))))
+
+![rqt_graph command](https://github.com/AlolyanRoaa/ROS-PreparingWith-ArduinoRobotArmpkg/blob/main/4-simulation%20%26%20Controlling%20the%20motors%20joint_state_publisher/4-rqt_qraph.PNG)
+
+
 
 
 ## 5-Creating the manipulation with MoveIt
@@ -150,5 +163,6 @@ the run moveit_pkg in Rviz and Gazebo
 	$ roslaunch moveit_pkg demo.launch
 	$ roslaunch moveit_pkg demo_gazebo.launch
 ```
-(((FINAL IMAGE)))
+
+![moveit_pkg in Rviz and Gazebo](https://github.com/AlolyanRoaa/ROS-PreparingWith-ArduinoRobotArmpkg/blob/main/5-Creating%20the%20manipulation%20with%20MoveIt/5-gazebo%20and%20moveit.PNG)
 
