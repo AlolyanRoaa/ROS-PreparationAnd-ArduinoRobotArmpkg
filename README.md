@@ -1,6 +1,6 @@
 
 
-# ROS Preparing With arduino_robot_arm package
+# ROS Preparation and Arduino_Robot_Arm pkg
 
 documentation of preparing ROS with arduino_robot_arm package
 
